@@ -1,6 +1,6 @@
 # Pulsar REST Example
 
-This example runs a synchronous (blocking) "microwebframework" REST server
+This example runs synchronous (blocking) "micro-webframework" REST servers
 in the Pulsar async framework using 20 worker threads.
 
 ## Running
