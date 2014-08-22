@@ -1,13 +1,13 @@
 from pulsar.apps import wsgi
 from pulsar.apps.wsgi.middleware import middleware_in_executor, wait_for_body_middleware
 
-from example import app, config
+from example import config, routes
 
 class Site(wsgi.LazyWsgi):
     def setup(self, environ=None):
         return wsgi.WsgiHandler(
             [wait_for_body_middleware,
-             middleware_in_executor(app.app)])
+             middleware_in_executor(routes.app)])
 
 def run():
     wsgi.WSGIServer(
