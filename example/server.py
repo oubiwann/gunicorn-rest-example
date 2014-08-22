@@ -15,3 +15,6 @@ def run():
         workers=config.worker_count,
         thread_workers=config.thread_worker_count,
         bind=(config.host + ":" + config.port)).start()
+
+if __name__ == '__main__':
+    run()
