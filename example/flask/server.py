@@ -1,7 +1,8 @@
 from pulsar.apps import wsgi
 from pulsar.apps.wsgi.middleware import middleware_in_executor, wait_for_body_middleware
 
-from example import config, routes
+from example import config
+from example.flask import routes
 
 class Site(wsgi.LazyWsgi):
     def setup(self, environ=None):
