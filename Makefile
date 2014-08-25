@@ -1,5 +1,7 @@
 run-flask:
-	PYTHONPATH=. python example/flask/server.py
+	gunicorn -w 10 -b 0.0.0.0:8080 -n gevent --pythonpath ./ \
+	example.flask.routes:app
 
 run-bottle:
-	PYTHONPATH=. python example/bottle/server.py
+	gunicorn -w 10 -b 0.0.0.0:8080 -n gevent --pythonpath ./ \
+	example.bottle.routes:app
